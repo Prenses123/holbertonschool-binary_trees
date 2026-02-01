@@ -12,16 +12,13 @@ size_t binary_tree_height(const binary_tree_t *tree)
 
 	if (tree == NULL)
 		return (0);
-
 	left = binary_tree_height(tree->left);
 	right = binary_tree_height(tree->right);
-
 	if (left > right)
 		return (left + 1);
 	else
 		return (right + 1);
 }
-
 /**
  * power_of_two - Compute 2 raised to the power z
  * @z: Exponent
@@ -35,10 +32,8 @@ static size_t power_of_two(size_t z)
 
 	for (i = 0; i < z; i++)
 		result *= 2;
-
 	return (result);
 }
-
 /**
  * binary_tree_size - Measures the size of a binary tree
  * @tree: Pointer to the root node
@@ -48,11 +43,9 @@ size_t binary_tree_size(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 		return (0);
-
 	return (1 + binary_tree_size(tree->left) +
 		binary_tree_size(tree->right));
 }
-
 /**
  * binary_tree_is_perfect - Check if a binary tree is perfect
  * @tree: Pointer to the root node
@@ -67,10 +60,8 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
 	if (tree == NULL)
 		return (0);
-
 	height = binary_tree_height(tree);
 	size = binary_tree_size(tree);
 	perfect_nodes = power_of_two(height) - 1;
-
 	return (size == perfect_nodes);
 }
